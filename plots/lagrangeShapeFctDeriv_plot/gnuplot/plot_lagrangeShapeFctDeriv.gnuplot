@@ -25,15 +25,15 @@ set title "Lagrangian Shape functions derivative"
 #set nokey
 
 
-set output '../images/lagrangeShapeFctDeriv.pdf'
-stats "../data/lagrangeShapeFctDeriv.dat" nooutput
+set output script_path . '../../images/lagrangeShapeFctDeriv.pdf'
+stats script_path .'../../data/lagrangeShapeFctDeriv.dat' nooutput
 N = STATS_records
 M = STATS_columns
-data="../data/lagrangeShapeFctDeriv.dat"
+data=script_path . '../../data/lagrangeShapeFctDeriv.dat'
 #plot m using 1:2 with lp
 #plot data   u 1:2 w l ls 1 t "shape1" , \
 #    ''   u 1:3  w l ls 2 t "shape2" 
-plot for [i=2:M] data using 1:i w l ls (i-1)  title "shape ".(i-1)
+plot for [i=2:M] data using 1:i w l ls (i-1) lw 3 title "shape ".(i-1)
 
 # set term xterm
 #set terminal qt enhanced font "Alegreya, 14" persist

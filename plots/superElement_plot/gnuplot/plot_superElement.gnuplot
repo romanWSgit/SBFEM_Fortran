@@ -1,5 +1,5 @@
 ### plot some colored triangles from a datablock
-reset session
+#reset session
 
 set terminal pdfcairo enhanced color dashed font "Alegreya, 14" \
 rounded size 16 cm, 9.6 cm
@@ -8,10 +8,10 @@ FileToDatablock(f,d) = GPVAL_SYSNAME[1:7] eq "Windows" ? \
                        sprintf('< echo   %s ^<^<EOD  & type "%s"',d,f) : \
                        sprintf('< echo "\%s   <<EOD" & cat  "%s"',d,f)     # Linux/MacOS
 
-FILE = "../data/polygon.dat"
+FILE = script_path . '../../data/polygon.dat'
 load FileToDatablock(FILE,'$Data')
 
-set output '../images/superElement.pdf'
+set output script_path . '../../images/superElement.pdf'
 set title "superElement"
 ### draw some colored triangles from a datablock
 

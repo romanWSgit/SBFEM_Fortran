@@ -1,4 +1,9 @@
+MAKEFILE_PATH = $(abspath $(lastword $(MAKEFILE_LIST)))
+CURRENT_DIR = $(dir $(MAKEFILE_PATH))
+
+
 all :
+	@echo "Makefile is in: $(CURRENT_DIR)"
 	make all -C lagrangeShapeFct_plot
 	make all -C lagrangeShapeFctDeriv_plot
 	make all -C superElement_plot

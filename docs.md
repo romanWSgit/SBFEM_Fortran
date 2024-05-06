@@ -1,16 +1,14 @@
 project: SBFEM
-summary: SBFEM
+summary: A simple Fortran SBFEM implementation
 author: Roman Wallner- Silberhuber
-src_dir: ./
-output_dir: ./doc
+src_dir: ./src  
+         ./app
+exclude: functional.f90
 exclude_dir: ./plots
-display: public
-         protected
-source: false
-proc_internals: true
-sort: permission-alpha
+             ./obj
+             ./include
+             ./lib
+output_dir: ./doc
 print_creation_date: true
 creation_date: %Y-%m-%d %H:%M %z
-md_extensions: markdown.extensions.toc
-               markdown.extensions.smarty
----
+preprocess: False
